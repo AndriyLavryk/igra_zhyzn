@@ -1,0 +1,48 @@
+<!-- templates/live.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-4">
+  <div class="d-flex justify-content-between mb-3">
+    <a href="{{ url_for('inicio') }}" class="btn btn-warning">Portada</a>
+    <form action="{{ url_for('live') }}" method="POST" style="display:inline;">
+      <button type="submit" class="btn btn-info">Crear una vida nueva</button>
+    </form>
+  </div>
+
+  {% if juego %}
+    <h5>Generación: {{ juego.counter }}</h5>
+    <div class="table-container">
+        {% if juego %}
+        <table class="world">
+            {% for i in range(juego.world|length) %}
+            <tr>
+                {% for j in range(juego.world[i]|length) %}
+                {% if juego.world[i][j] %}
+                <td class="cell living-cell"></td>
+                {% elif not juego.world[i][j] and juego.old_world[i][j]%}
+                <td class="cell dead-cell"></td>
+
+                {% else %}
+                <td class="cell"></td>
+                {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+         <p>Por favor, configura el tamaño del mundo en la página principal.</p>
+        {% endif %}
+    </div>
+  {% else %}
+    <p class="alert alert-info">Por favor, configura el tamaño del mundo en la página principal.</p>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    // Avanza automáticamente cada segundo
+    setInterval(() => { location.reload(); }, 1000);
+  </script>
+{% endblock %}

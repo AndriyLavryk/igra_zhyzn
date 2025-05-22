@@ -1,0 +1,104 @@
+/* Estilos generales de la tabla */
+.world {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+}
+
+.cell {
+    padding: 5px;
+    background: whitesmoke;
+    width: 30px;
+    height: 30px;
+}
+
+.living-cell {
+    background: lightgreen;
+}
+
+.dead-cell {
+    background: darkred;
+}
+
+/* Centrar contenido y estructura flexible */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Contenedor especial para los enlaces en la parte superior */
+.links-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px; /* Espacio entre botones */
+}
+
+/* Ajuste de la tabla para que se mantenga centrada */
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espacio entre los enlaces y la tabla */
+}
+
+/* Estilos de botones */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: #337ab7;
+    color: #fff;
+}
+
+.btn-info {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.btn-warning {
+    background-color: #f0ad4e;
+    color: #fff;
+}
+
+/* Mejor organización del diseño */
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    background: aliceblue;
+    border: 2px solid indigo;
+    position: relative;  /* Permite un mejor posicionamiento */
+    margin-bottom: 20px; /* Agrega espacio debajo */
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la pantalla */
+}
