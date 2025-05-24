@@ -22,8 +22,8 @@ def live():
     # Si viene del formulario, inicializamos o reiniciamos el juego
     if request.method == "POST":
         try:
-            ancho = int(request.form.get("ancho", 15))
-            altura = int(request.form.get("altura", 15))
+            ancho = int(request.form.get("ancho", 25))
+            altura = int(request.form.get("altura", 25))
         except (TypeError, ValueError):
             return "Error: ancho y altura deben ser números válidos", 400
 
