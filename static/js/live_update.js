@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    setInterval(refresher, 250);
+    setInterval(refresher, 1000);
 });
 
 function refresher() {
