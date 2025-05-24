@@ -10,10 +10,10 @@
   </div>
 
   {% if juego %}
-    <h5>Generación: {{ juego.counter }}</h5>
+    <h5 id="counter">Generación: {{ juego.counter }}</h5>
     <div class="table-container">
         {% if juego %}
-        <table class="world">
+        <table id='world' class="world">
             {% for i in range(juego.world|length) %}
             <tr>
                 {% for j in range(juego.world[i]|length) %}
@@ -41,8 +41,7 @@
 
 {% block scripts %}
   {{ super() }}
-  <script>
-    // Avanza automáticamente cada segundo
-    setInterval(() => { location.reload(); }, 1000);
-  </script>
+ <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.6.0.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/live_update.js') }}"></script>
+
 {% endblock %}
